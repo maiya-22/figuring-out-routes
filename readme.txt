@@ -1,0 +1,1 @@
+Trying to figure out how routes that are linked in html pages are served to the browser.
