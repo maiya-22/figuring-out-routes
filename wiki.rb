@@ -1,12 +1,12 @@
 require  "sinatra"
+# test.rb just has a helper function to read the text from a certain path
 require "./test.rb"
 #set :bind, "0.0.0.0"  configuring to accept requests from any (remote) computer:
 
 # class HiSinatra < Sinatra::Base
 # end
 
-#how to chnge server in sinatra
-
+#how to change host and port in sinatra?
 
 get "/html/:name" do   #req.params.name  here, called params
     name = params[:name]
@@ -15,8 +15,8 @@ get "/html/:name" do   #req.params.name  here, called params
 end
 
 get "/static/*" do
-    "static route"
-    #how to get the root path dynamically?
+    p "static route"
+    #how to get the root path dynamically, instead of hard-coding it like this?
     root_path = "/Users/maiya/Desktop/code-assignments/treehouse-sinatra/"
     #how to pull the actual url string, in order to parse it? instead of params or query?
     #how to get this dynamically from the url entered: 
@@ -28,7 +28,8 @@ get "/static/*" do
 end
 
 get '/' do
-   erb :welcome #the file name, without the .erb extension  # automatically looks for it in the 'views' folder? any way or reason to re-set?    #implicitly becomes response.send()
+   erb :welcome #the file name, without the .erb extension  # automatically looks for it in the 'views' folder? 
+   #any way or reason to re-set?    #implicitly becomes response.send() b/c is last line in block.
 end
 
 
